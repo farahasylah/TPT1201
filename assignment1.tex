@@ -1,9 +1,82 @@
-\documentclass[•]{article}
-\title{•}
-\author{•}
-\begin{document}
-\abstract{}
-This is a report
+\documentclass[10pt,a4paper,openany]{report}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage{longtable}
 
-Sample
+\title{Faculty of Computing and Informatics\\
+TPT1201\\
+Research Methodology\\
+Assignment 1\\}
+\author{ Nur Farah Asylah Bt Nordin \\
+1122702103 \\}
+\date{\today}
+
+\begin{document}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[scale=1]{./images/mmulogo}
+%\end{figure}
+\maketitle
+\pagebreak 
+
+{\renewcommand{\arraystretch}{1.5}
+\hspace*{-2cm}
+\begin{tabular}{ |p{2.2cm}| p{13cm}| }
+\hline
+Paper Title & Applications of Image Recognition for 			Real-Time Water Level and Surface Velocity\\
+\hline
+\multirow{2}{*}{Author(s)} & Franco Lin, Wen-Yi Chang, Lung-Cheng 		  	Lee, Hung-Ta Hsiao, Whey-fone Tsai \\
+& National Center for High-Performance Computing \\
+& National Applied Research Laboratories. \\
+& Jihn-Sung Lai \\
+& Hydrotech Research Institute \\
+\hline
+\multirow{2}{*}{Abstract}  & This paper is a review on a research paper entitled “Applications of Image Recognition for Real-Time Water Level and Surface Velocity”. This review is done by analysing every key point in the paper and the relation to the experiment.  \\
+\hline
+\pagebreak
+Problem Solved &This research presents an implementation of image processing technology for the recognition of river water level and the surface velocity. As mentioned in (Lin et al., 2013),the authors addressed problem in recognizing the water line. They tried detecting the uneven luminance but reflection of ruler which also generates another uneven luminance on the water surface, therefore, the threshold value can’t be found appropriately. Other than that, they also tried to use motion detection method to split the foreground and background. This method is not suitable due to the shake of camera during the typhoon periods.
+ \\
+\hline
+Claimed Contributions & For the study of recognizing the surface velocity image, the method proposed able to measure accurately the flow velocity from the northeast to the southwest. The authors have tested this at Feitsui reservoir during the day and even at night with the support of luminance light. The three-day result is recorded and presented in a Velocity-Time graph. The study of the real-time water level also shows a satisfying result. This recognition method was also tested in three days and presented in a Height-Time graph. The result of recognition water levels do correspond with the measured data.\\
+\hline
+\multirow{2}{*}{Related work}  & This topic is raised due to the safety and stability of bridges. The author had strongly emphasized the need of having a monitoring system especially during critical events involving natural disaster.  Few past methods were stated with the advantages of each, however, no citation from any source were stated. It is not promising that the author knew such methods without getting it from a source and this paper may not be readable to an open reader. In contrast, several research papers were cited by the author and each with a short description of the experiment done. The author also mentioned on a recent research which is the real-time large-scale Particle Image Velocimetry (LSPIV) system that monitored a river flow in five months. Based on the data measured with only 10\% error, the authors are determined to use this method in this study for real-time measurements 
+\\
+\hline
+\end{tabular}
+\hspace*{-2cm}
+
+{\renewcommand{\arraystretch}{1.5}
+\hspace*{-2cm}
+\begin{tabular}{ |p{2.2cm}| p{13cm}| }
+\hline
+\multirow{3}{*}{Methodology} & To test out this experiment, two high-resolution monitoring cameras were installed at the in-situ measurement sites. One camera was set up on the side of the bridge to capture the  top view of  the river surface while another camera capture the water gauge to get the water level of Feitsui reservoir. In addition to that, a wiper was installed outside the windshield of the camera  in order to avoid rain that may affect the image quality. The monitoring images were then transmitted to the local server through the network to be processed in real-time.
+The author measures two different properties of image recognition which is the water level and the surface velocity. In the first method, few approaches were tested initially in detecting the water line and have come to a failure due to the certain conditions. Edge detection was then used and the explanations were well described. In order to achieve the recognition, an algorithm steps were used and were presented along with output images from each step. This gives a visual idea of how each process goes as it move along towards the end step. In this method however did not state what equipment was used for the statement “we simply use the bottom-up approach to get the water line from the lower bound of the ruler body.”
+In the next method, it is to recognize the water gauge characters using the original image. In order to achieve a clear image of the characters, the author used the same tresholding method from the previous but different filters were applied before that. This was presented with images in diagram approach to represent those complex approaches being used. The output image was then being tested with a template match equation to recognize those characters. Using the two images from the two methods mentioned, the author used interpolation method to calculate the actual height of the water line.
+For the surface velocity image recognition process, a flowchart was presented to measure the surface velocity. The first step is to have a correct perspective of the camera by using geometric correction. In this step, two equations were used known as DLT (Direct Linear Transformation) equation and each element in the equation was well defined. The second step is to analyse the correlation of the consecutive images that is by having a fixed-size window known as Interrogation
+Area (IA). In order to improve the calculation efficiency, the author constructed an equation which was interpreted from the traditional Particle Image Velocimetry (PIV) algorithm (Adrian, 1991) to improve the calculation efficiency. Both equations were well defined and the explanation of the conversion from the original equation was clear. Next step, the two consecutive image blocks were then being analysed and presented in a cross-correlation coefficient map which then interpreted into a quadratic curve fitting graph using quadratic curve equation as mentioned. 
+\\
+\hline
+\end{tabular}
+\hspace*{-2cm}
+
+{\renewcommand{\arraystretch}{1.5}
+\hspace*{-2cm}
+\begin{tabular}{ |p{2.2cm}| p{13cm}| }
+\hline
+\multirow{2}{*}{Conclusions} & In this paper, the authors have developed a real-time water level and surface velocity recognition system using images. These images were captured using two-high resolution cameras installed near the river. For water level recognition, the captured image was processed into 2 concurrent processes which are to detect the water level and the characters recognition. Then, these filtered images were used for interpolation to achieve a valid result. For surface velocity recognition,Particle Image
+Velocimetry (PIV) method was used to obtain the recognition of the
+water surface velocity by the analysis of Cross-Correlation Coefficient.This research has gained good results and have the potential to provide real-time information of both water level and surface velocity. \\
+\hline
+What did you learn algorithms/ experiments details? & In this study, the authors had formed an equation which interpreted from past research (Adrian, 1991). This shows that the authors has full understanding of the construction of the equation and able to form a simple yet relevant equation. I also learned that the authors had determination towards their goals even there were few failures in choosing the way to capture the situation happening at the reservoir. In addition, the experiment were well presented and using an actual image at each steps. The explanations came along also very clear and this could give the general idea to open readers that were not in this type of field.\\
+Possible extension/ Future work & This experiment has gain a successful result and could be useful for further research. Certain events could be improved including conducting the experiment during flood or any other critical weather condition. In addition, this experiment requires a lot of time especially capturing and filtering process. Also, every captured and filtered image needed to be saved every minute and it takes a lot of memory to be consumed. \\
+\hline
+\multirow{2}{*}{References} & Lin, F., Chang, W.-Y., Lee, L.-C., Hsiao, H.-T., Tsai, W.-F., \& Lai, J.-S. (2013). Applications of Image Recognition for Real-Time Water Level and Surface Velocity. In 2013 IEEE International Symposium on Multimedia (ISM) (pp. 259–262). http://doi.org/10.1109/ISM.2013.49\\
+& \\
+& Adrian, R. J. (1991). Particle-Imaging Techniques for Experimental Fluid Mechanics. Annual Review of Fluid Mechanics, 23(1), 261–304. http://doi.org/10.1146/annurev.fl.23.010191.001401
+\\
+\hline
+\end{tabular}
+\hspace*{-2cm}
+
 \end{document}
